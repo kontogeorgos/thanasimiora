@@ -1,0 +1,41 @@
+ {% block head %}
+<meta charset="UTF-8" />
+<title>ΘΑΝΑΣΙΜΗ ΩΡΑ</title>
+<!-- <link rel="icon" type="image/x-icon" href="cinempiaxlogo.ico"> -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"
+></script>
+<link href="resources\css\styles.css" rel="stylesheet" />
+
+{% endblock %} {% block body %}
+<div id="crypto_container">
+  <div class="crypto">
+    <script src="https://widgets.coingecko.com/gecko-coin-price-static-headline-widget.js"></script>
+    <gecko-coin-price-static-headline-widget
+      locale="en"
+      outlined="false"
+      coin-ids="popcat,poocoin,pepe,floki,dogecoin,hamster-kombat,shiba-inu,pepe-trump"
+      initial-currency="usd"
+    ></gecko-coin-price-static-headline-widget>
+  </div>
+  <div aria-hidden class="crypto">
+    <script src="https://widgets.coingecko.com/gecko-coin-price-static-headline-widget.js"></script>
+    <gecko-coin-price-static-headline-widget
+      locale="en"
+      outlined="false"
+      coin-ids="popcat,poocoin,pepe,floki,dogecoin,hamster-kombat,shiba-inu,pepe-trump"
+      initial-currency="usd"
+    ></gecko-coin-price-static-headline-widget>
+  </div>
+</div>
+{% endblock %} {% block footer %}
+<h1>watever</h1>
+{% endblock %}
