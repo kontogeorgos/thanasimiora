@@ -97,6 +97,7 @@ img {
 }
 
 .footer {
+  bottom: 0;
   display: flex;
   justify-content: space-around;
   background-color: #ba0e09;
@@ -121,3 +122,4 @@ img {
   align-items: center;
   width: 75%;
 }
+
