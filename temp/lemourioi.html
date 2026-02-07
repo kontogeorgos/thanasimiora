@@ -109,19 +109,101 @@
 </div>
 
 <!-- end news -->
-<div id="comments-section">
+<!-- Comment Section HTML -->
+<div id="comments-section" class="comments-container">
   <h3>Comments</h3>
-  <div id="comments-list"></div>
+  <div id="comments-list" class="comments-list"></div>
 
-  <h4>Leave a comment</h4>
-  <input type="text" id="comment-name" placeholder="Your name (optional)">
-  <textarea id="comment-text" placeholder="Your comment"></textarea>
-  <button onclick="postComment()">Post Comment</button>
+  <h4>Leave a Comment</h4>
+  <input type="text" id="comment-name" placeholder="Your name (optional)" class="comment-input">
+  <textarea id="comment-text" placeholder="Your comment" class="comment-textarea"></textarea>
+  <button onclick="postComment()" class="comment-button">Post Comment</button>
 </div>
 
+<!-- CSS Styling -->
+<style>
+.comments-container {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.comments-container h3, .comments-container h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.comments-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-item strong {
+  color: #1a73e8;
+}
+
+.comment-item em {
+  font-size: 0.85em;
+  color: #555;
+  margin-left: 5px;
+}
+
+.comment-input, .comment-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus, .comment-textarea:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+.comment-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.comment-button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-button:hover {
+  background-color: #155ab6;
+}
+</style>
+
+<!-- JS Script -->
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbz4cc8jSe91ADsF5Mpzn30Rfq7kOxVK2lyoaI6YAfXtcoTVFHu3rKhhABs9tT75wLgTOA/exec"; // From Step 2
-const PAGE_ID = window.location.pathname; // unique per page
+const API_URL = "https://script.google.com/macros/s/AKfycbz4cc8jSe91ADsF5Mpzn30Rfq7kOxVK2lyoaI6YAfXtcoTVFHu3rKhhABs9tT75wLgTOA/exec"; // Your Google Apps Script URL
+const PAGE_ID = window.location.pathname;
 
 // Fetch and display comments
 async function loadComments() {
@@ -133,8 +215,7 @@ async function loadComments() {
     if (comments.length === 0) container.innerHTML = "<p>No comments yet.</p>";
     comments.forEach(c => {
       const div = document.createElement("div");
-      div.style.borderBottom = "1px solid #ccc";
-      div.style.padding = "5px 0";
+      div.className = "comment-item";
       div.innerHTML = `<strong>${c.name}</strong> <em>${new Date(c.timestamp).toLocaleString()}</em><br>${c.comment}`;
       container.appendChild(div);
     });
@@ -145,12 +226,13 @@ async function loadComments() {
 
 // Post a comment
 async function postComment() {
-  const name = document.getElementById("comment-name").value;
+  const name = document.getElementById("comment-name").value || "Anonymous";
   const comment = document.getElementById("comment-text").value;
   if (!comment) return alert("Comment cannot be empty");
   try {
     await fetch(`${API_URL}?action=post&page=${encodeURIComponent(PAGE_ID)}&name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`);
     document.getElementById("comment-text").value = "";
+    document.getElementById("comment-name").value = "";
     loadComments();
   } catch (e) {
     console.error(e);
@@ -160,6 +242,7 @@ async function postComment() {
 // Load comments on page load
 loadComments();
 </script>
+
 
 </body>
 
@@ -175,6 +258,7 @@ loadComments();
    
 
 </html>
+
 
 
 
