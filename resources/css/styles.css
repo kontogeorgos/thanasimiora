@@ -131,6 +131,90 @@ img {
 }
 
 
+/* σχόλια */
+.comments-container {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments-container h3,
+.comments-container h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.comments-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-item strong {
+  color: #1a73e8;
+}
+
+.comment-item em {
+  font-size: 0.85em;
+  color: #555;
+  margin-left: 5px;
+}
+
+.comment-input,
+.comment-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+  border-color: #ba0e09;
+  outline: none;
+}
+
+.comment-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.comment-button {
+  background-color: #ba0e09;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-button:hover {
+  background-color: #155ab6;
+}
+
+/* τελος σχολιων */
+
+
 
 
 
