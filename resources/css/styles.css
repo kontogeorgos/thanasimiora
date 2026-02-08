@@ -131,6 +131,37 @@ img {
 }
 
 
+.epikoinonia-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75%vw;
+}
+
+.child {
+  display: flex;
+  padding-bottom: 20px;
+}
+.svgs {
+  height: 30px;
+  width: 50px;
+  fill: #ba0e09;
+}
+
+.triangle {
+  padding-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.oroi {
+  text-align: justify;
+  text-justify: inter-word;
+  width: 75%;
+}
+
 /* σχόλια */
 .comments-container {
   max-width: 700px;
@@ -213,6 +244,7 @@ img {
 }
 
 /* τελος σχολιων */
+
 
 
 
