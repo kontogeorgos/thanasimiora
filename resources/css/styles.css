@@ -1,7 +1,25 @@
 @media (max-width: 768px) {
   body {
     font-size: 14px;}}
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 1rem;
+}
 .topbar {
   display: flex;
   background-color: #ba0e09;
@@ -260,6 +278,7 @@ img {
 }
 
 /* τελος σχολιων */
+
 
 
 
