@@ -1,14 +1,14 @@
 var articles = [ 
-  //   {
-  //   id: 23,
-  //   date: "9/2/2026",
-  //   title: "Υπερθέρμανση του σύμπαντος",
-  //   pic: "iperthermansi",
-  //   category: "ΦΥΣΙΚΗ",
-  //   author: "ROBERT MUGABE jr",
-  //   link: "iperthermansi",
-  //   text: " Lore22m ipsum",
-  // },  
+    {
+    id: 23,
+    date: "9/2/2026",
+    title: "Υπερθέρμανση του σύμπαντος",
+    pic: "iperthermansi",
+    category: "ΦΥΣΙΚΗ",
+    author: "ROBERT MUGABE jr",
+    link: "iperthermansi",
+    text: " Lore22m ipsum",
+  },  
     {
     id: 23,
     date: "8/2/2026",
@@ -290,6 +290,7 @@ const script = document.createElement("script");
 script.src = "/thanasimiora/resources/javascript/comments.js";        // or inline script
 script.defer = true;              // optional but recommended
 document.body.appendChild(script);
+
 
 
 
