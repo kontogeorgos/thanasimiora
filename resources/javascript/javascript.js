@@ -1,6 +1,6 @@
 var articles = [ 
     {
-    id: 23,
+    id: 24,
     date: "9/2/2026",
     title: "Υπερθέρμανση του σύμπαντος",
     pic: "iperthermansi",
@@ -290,6 +290,7 @@ const script = document.createElement("script");
 script.src = "/thanasimiora/resources/javascript/comments.js";        // or inline script
 script.defer = true;              // optional but recommended
 document.body.appendChild(script);
+
 
 
 
