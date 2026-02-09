@@ -1,4 +1,23 @@
 var articles = [ 
+        {
+    id: 26,
+    date: "10/2/2026",
+    title: "Αλληγορίες και Σπήλαια",
+    pic: "cave",
+    category: "ΙΣΤΟΡΙΑ",
+    author: "ROBERT MUGABE jr",
+    link: "cave",
+    text: " Lore22m ipsum",
+  },      {
+    id: 25,
+    date: "10/2/2026",
+    title: "Αλχημιστές, Αίμα και ο Θρόνος",
+    pic: "lionheart",
+    category: "ΙΣΤΟΡΙΑ",
+    author: "ΜΑΡΙΑ ΘΗΡΕΣΙΑ",
+    link: "lionheart",
+    text: " Lore22m ipsum",
+  },  
     {
     id: 24,
     date: "9/2/2026",
@@ -323,6 +342,7 @@ const script = document.createElement("script");
 script.src = "/thanasimiora/resources/javascript/comments.js";        // or inline script
 script.defer = true;              // optional but recommended
 document.body.appendChild(script);
+
 
 
 
