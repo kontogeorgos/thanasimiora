@@ -380,7 +380,7 @@ function articlepage() {
   var v = articles.length - params.get("text");
 
   rr =
-    '<img        class="template1div"        src="..\resources\images\'' +
+    '<img        class="template1div"        src="/thanasimiora/resources/images/' +
     articles[v].pic +
     '.png"        alt="article"      />      <div class="subtext">        <h6>' +
     articles[v].category +
@@ -396,6 +396,7 @@ function articlepage() {
 
   document.getElementById("testing").innerHTML = rr;
 }
+
 
 
 
