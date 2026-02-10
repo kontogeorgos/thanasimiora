@@ -287,18 +287,18 @@ function combineTexts(articles) {
   let result = "";
 
   articles.forEach((article) => {
-    result +=
-      '<div class="newscontainer"><div><div class="newsdiv"><a href="temp/' +
-      article.link +
-      '.html"><img src="/thanasimiora/resources/images/' +
+   result +=
+      '<div class="newscontainer"><div><div class="newsdiv"><a href="temp/template1.html?text=' +
+      encodeURIComponent(article.id) +
+      '" onclick="saveText()><img src="/thanasimiora/resources/images/' +
       article.pic +
       '.png" alt="article"/></a><h6 class="category"> ' +
       article.category +
       '</h6></div><h5 id="date">' +
       article.date +
-      '</h5></div><a href="/thanasimiora/temp/' +
-      article.link +
-      '.html"><h1 id="title">' +
+      '</h5></div><a href="temp/template1.html?text=' +
+      encodeURIComponent(article.id) +
+      '" onclick="saveText()><h1 id="title">' +
       article.title +
       "</h1></a></div>";
   });
@@ -326,20 +326,20 @@ function filterArticles(cat) {
 
   articles.forEach((article) => {
     if (article.category == cat) {
-      result +=
-        '<div class="newscontainer"><div><div class="newsdiv"><a href="temp/' +
-        article.link +
-        '.html"><img src="/thanasimiora/resources/images/' +
-        article.pic +
-        '.png" alt="article"/></a><h6 class="category"> ' +
-        article.category +
-        '</h6></div><h5 id="date">' +
-        article.date +
-        '</h5></div><a href="temp/' +
-        article.link +
-        '.html"><h1 id="title">' +
-        article.title +
-        "</h1></a></div>";
+    result +=
+      '<div class="newscontainer"><div><div class="newsdiv"><a href="temp/template1.html?text=' +
+      encodeURIComponent(article.id) +
+      '" onclick="saveText()><img src="/thanasimiora/resources/images/' +
+      article.pic +
+      '.png" alt="article"/></a><h6 class="category"> ' +
+      article.category +
+      '</h6></div><h5 id="date">' +
+      article.date +
+      '</h5></div><a href="temp/template1.html?text=' +
+      encodeURIComponent(article.id) +
+      '" onclick="saveText()><h1 id="title">' +
+      article.title +
+      "</h1></a></div>";
     }
 
     
@@ -369,6 +369,31 @@ const script = document.createElement("script");
 script.src = "/thanasimiora/resources/javascript/comments.js";        // or inline script
 script.defer = true;              // optional but recommended
 document.body.appendChild(script);
+
+
+
+function articlepage() {
+  const params = new URLSearchParams(window.location.search);
+  var v = articles.length - params.get("text");
+
+  rr =
+    '<img        class="template1div"        src="..\resources\images\'' +
+    articles[v].pic +
+    '.png"        alt="article"      />      <div class="subtext">        <h6>' +
+    articles[v].category +
+    "</h6>        <h5>" +
+    articles[v].date +
+    '</h5>      </div>      <h1 class="template1div">' +
+    articles[v].title +
+    '</h1>      <div class="article template1div">        <p>Από τον <b>' +
+    articles[v].author +
+    "</b></p>        " +
+    articles[v].text +
+    "      </div>    </div>";
+
+  document.getElementById("testing").innerHTML = rr;
+}
+
 
 
 
