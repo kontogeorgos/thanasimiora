@@ -25,7 +25,7 @@ footer {
   align-items: center;
   height: 200px;
 }
-
+#titles{width:75%vw}
 #menu {
   font-weight: bold;
   background-color: #ffbf00;
@@ -277,6 +277,7 @@ img {
 }
 
 /* τελος σχολιων */
+
 
 
 
