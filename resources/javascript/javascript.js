@@ -323,10 +323,14 @@ function filterArticles(cat) {
         "</h1></a></div>";
     }
 
-    const newstemplate1 = document.getElementByclassname("template1container")[0];
-    newsEl.innerHTML = result;
-          if (newstemplate1){ 
-          newstemplate1.innerHTML = result;}
+    
+    if (newsEl) {
+      newsEl.innerHTML = result;
+    } else {
+      const newstemplate1 =
+        document.getElementByclassname("template1container")[0];
+      newstemplate1.innerHTML = result;
+    }
   });
 }
 
@@ -346,6 +350,7 @@ const script = document.createElement("script");
 script.src = "/thanasimiora/resources/javascript/comments.js";        // or inline script
 script.defer = true;              // optional but recommended
 document.body.appendChild(script);
+
 
 
 
