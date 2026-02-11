@@ -1,5 +1,5 @@
 <script>
-const API_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+const API_URL = "https://script.google.com/macros/s/AKfycbz4cc8jSe91ADsF5Mpzn30Rfq7kOxVK2lyoaI6YAfXtcoTVFHu3rKhhABs9tT75wLgTOA/exec";
 
 // Extract ?text=ARTICLE_ID from URL
 function getPageId() {
@@ -72,3 +72,4 @@ function escapeHtml(text) {
 // Load on page open
 loadComments();
 </script>
+
