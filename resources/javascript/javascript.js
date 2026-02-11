@@ -316,6 +316,8 @@ const newz = combineTexts(articles);
 const newsEl = document.getElementById("news");
 if (newsEl) {
   newsEl.innerHTML = newz;
+  initPagination();
+
 }
 
 document.addEventListener("click", function (e) {
@@ -360,6 +362,7 @@ function filterArticles(cat) {
      document.getElementById("epikoinonia-container").innerHTML=result;
       document.getElementById("comments-section").innerHTML ="";
     }
+initPagination();
 
   });
 }
@@ -452,6 +455,7 @@ const itemsPerPage = 10;
 
 
 // end pagination
+
 
 
 
