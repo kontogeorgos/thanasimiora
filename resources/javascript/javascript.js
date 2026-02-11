@@ -1,4 +1,5 @@
-// var articles = [  {
+var articles = [ 
+  // {
 //     id: 29,
 //     date: "2/2/2026",
 //     title:
@@ -408,6 +409,7 @@ function articlepage() {
 
   document.getElementById("testing").innerHTML = rr;
 }
+
 
 
 
