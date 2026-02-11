@@ -311,13 +311,9 @@ function combineTexts(articles) {
 
 const newz = combineTexts(articles);
 
-
-
 const newsEl = document.getElementById("news");
 if (newsEl) {
   newsEl.innerHTML = newz;
-  initPagination();
-
 }
 
 document.addEventListener("click", function (e) {
@@ -352,17 +348,13 @@ function filterArticles(cat) {
 
     
     if (newsEl) {
-      newsEl.innerHTML = result ;
-       const newstemplate1 =
+      newsEl.innerHTML = result;
+    } else {
+      const newstemplate1 =
         document.getElementById("testing");
-    } else if (newstemplate1) {     
-      newstemplate1.innerHTML = result ;
-      document.getElementById("comments-section").innerHTML ="";}
-    else {
-     document.getElementById("epikoinonia-container").innerHTML=result;
+      newstemplate1.innerHTML = result
       document.getElementById("comments-section").innerHTML ="";
     }
-initPagination();
 
   });
 }
@@ -407,4 +399,46 @@ function articlepage() {
 
   document.getElementById("testing").innerHTML = rr;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
