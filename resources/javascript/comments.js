@@ -1,7 +1,7 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycby-C1jB5kHoELxa__j5k09aJIlpafvAMCp923kKRJvshqExHGhD4mqHys-GDX235ZYUaQ/exec";
 
-const PAGE_ID = window.location.search ;
+const PAGE_ID = window.location.pathname+window.location.search ;
 // Fetch and display comments
 async function loadComments() {
   try {
@@ -44,6 +44,7 @@ async function postComment() {
 }
 
 loadComments();
+
 
 
 
