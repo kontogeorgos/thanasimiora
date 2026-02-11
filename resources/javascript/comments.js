@@ -1,16 +1,16 @@
 
 const API_URL = "https://script.google.com/macros/s/AKfycby-C1jB5kHoELxa__j5k09aJIlpafvAMCp923kKRJvshqExHGhD4mqHys-GDX235ZYUaQ/exec";
-
-const PAGE_ID = window.location.pathname;
+ const params = new URLSearchParams(window.location.search);
+  const v = articles.length - params.get("text");
+const PAGE_ID = window.location.pathname+&"?text="+v;
 
 // Fetch and display comments
 async function loadComments() {
   try {
-    const params = new URLSearchParams(window.location.search);
-  const v = articles.length - params.get("text");
+   
     
     const res = await fetch(
-      `${API_URL}?action=get&page=${encodeURIComponent(PAGE_ID)}&?text=${v}`,
+      `${API_URL}?action=get&page=${encodeURIComponent(PAGE_ID)}`,
     );
     const comments = await res.json();
     const container = document.getElementById("comments-list");
@@ -29,14 +29,13 @@ async function loadComments() {
 }
 
 async function postComment() {
-  const name = document.getElementById("comment-name").value || "Anonymous";
-  const comment = document.getElementById("comment-text").value;
+ 
   if (!comment) return alert("Comment cannot be empty");
   try {
     const params = new URLSearchParams(window.location.search);
   const v = articles.length - params.get("text");
     await fetch(
-      `${API_URL}?action=post&page=${encodeURIComponent(PAGE_ID)}&?text=${v)&name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`,
+      `${API_URL}?action=post&page=${encodeURIComponent(PAGE_ID)}&name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`,
     );
     document.getElementById("comment-text").value = "";
     document.getElementById("comment-name").value = "";
@@ -47,5 +46,6 @@ async function postComment() {
 }
 
 loadComments();
+
 
 
