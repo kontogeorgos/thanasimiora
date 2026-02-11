@@ -7,10 +7,10 @@ const PAGE_ID = window.location.pathname;
 async function loadComments() {
   try {
     const params = new URLSearchParams(window.location.search);
-  var v = articles.length - params.get("text");
+  const v = articles.length - params.get("text");
     
     const res = await fetch(
-      `${API_URL}?action=get&page=${encodeURIComponent(PAGE_ID)}&"?text="${v}`,
+      `${API_URL}?action=get&page=${encodeURIComponent(PAGE_ID)}&?text=${v}`,
     );
     const comments = await res.json();
     const container = document.getElementById("comments-list");
@@ -34,9 +34,9 @@ async function postComment() {
   if (!comment) return alert("Comment cannot be empty");
   try {
     const params = new URLSearchParams(window.location.search);
-  var v = articles.length - params.get("text");
+  const v = articles.length - params.get("text");
     await fetch(
-      `${API_URL}?action=post&page=${encodeURIComponent(PAGE_ID)}&"?text="${v)&name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`,
+      `${API_URL}?action=post&page=${encodeURIComponent(PAGE_ID)}&?text=${v)&name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`,
     );
     document.getElementById("comment-text").value = "";
     document.getElementById("comment-name").value = "";
@@ -47,4 +47,5 @@ async function postComment() {
 }
 
 loadComments();
+
 
