@@ -331,7 +331,7 @@ function filterArticles(cat) {
   articles.forEach((article) => {
     if (article.category == cat) {
     result +=
-      '<div class="newscontainer"><div><div class="newsdiv"><a href="temp/template1.html?text=' +
+      '<div class="newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
       encodeURIComponent(article.id) +
       '"><img src="/thanasimiora/resources/images/' +
       article.pic +
@@ -399,6 +399,7 @@ function articlepage() {
 
   document.getElementById("testing").innerHTML = rr;
 }
+
 
 
 
