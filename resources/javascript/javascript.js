@@ -311,7 +311,7 @@ function combineTexts(articles) {
 
 const newz = combineTexts(articles);
 
-var paginationbar="  <nav><ul class="pagination" id="pagination"></ul></nav>"
+var paginationbar='  <nav><ul class="pagination" id="pagination"></ul></nav>'
 
 
 const newsEl = document.getElementById("news");
@@ -451,6 +451,7 @@ const itemsPerPage = 10;
 
 
 // end pagination
+
 
 
 
