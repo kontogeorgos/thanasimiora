@@ -20,7 +20,7 @@ async function loadComments() {
     container.innerHTML = "";
 
     if (!comments || comments.length === 0) {
-      container.innerHTML = "<p>No comments yet.</p>";
+      container.innerHTML = "<p>Δεν υπάρχουν σχόλια ακόμη.</p>";
       return;
     }
 
@@ -72,6 +72,7 @@ function escapeHtml(text) {
 }
 
 loadComments();
+
 
 
 
