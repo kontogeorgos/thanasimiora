@@ -320,7 +320,7 @@ var articles = [
   },
 ];
 
-var pagin=" <nav aria-label="Page navigation example">      <ul class="pagination" id="pagination"></ul>    </nav>";
+const pagin=' <nav aria-label="Page navigation example">      <ul class="pagination" id="pagination"></ul>    </nav>';
 
 function combineTexts(articles) {
   let result = "";
@@ -480,3 +480,4 @@ const itemsPerPage = 10;
       showPage(1);
 
 //end pagination
+
