@@ -320,10 +320,6 @@ var articles = [
   },
 ];
 
-const pagin=' <nav aria-label="Page navigation example">      <ul class="pagination" id="pagination"></ul>    </nav>';
-
-
-
     document
       .querySelectorAll(".page-item")
       .forEach((li) => li.classList.remove("active"));
@@ -354,19 +350,6 @@ const pagin=' <nav aria-label="Page navigation example">      <ul class="paginat
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function combineTexts(articles) {
   let result = "";
 
@@ -393,9 +376,8 @@ const newz = combineTexts(articles);
 
 const newsEl = document.getElementById("news");
 if (newsEl) {
-  newsEl.innerHTML = newz + pagin;
-  initPagination();
-}
+  newsEl.innerHTML = newz;
+  }
 
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("dropdown-item")) {
@@ -429,14 +411,12 @@ function filterArticles(cat) {
 
     
     if (newsEl) {
-      newsEl.innerHTML = result + pagin;
-      initPagination();
+      newsEl.innerHTML = result;
     } else {
       const newstemplate1 =
         document.getElementById("testing");
-      newstemplate1.innerHTML = result + pagin
-      document.getElementById("comments-section").innerHTML =""
-        initPagination();;
+      newstemplate1.innerHTML = result
+      document.getElementById("comments-section").innerHTML ="";
     }
 
   });
@@ -484,47 +464,5 @@ function articlepage() {
 }
 
 // pagination
-const itemsPerPage = 10;
-      // const items = document.querySelectorAll(".item");
-      // const pagination = document.getElementById("pagination");
-
-      // const pageCount = Math.ceil(items.length / itemsPerPage);
-
-      function showPage(page) {
-        items.forEach((item, index) => {
-          item.style.display =
-            index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
-              ? "block"
-              : "none";
-        });
-
-        document
-          .querySelectorAll(".page-item")
-          .forEach((li) => li.classList.remove("active"));
-        document.getElementById(`page-${page}`).classList.add("active");
-      }
-
-     function initPagination() {
-  const items = document.querySelectorAll(".item");
-  const pagination = document.getElementById("pagination");
-
-  if (!pagination || items.length === 0) return;
-
-  pagination.innerHTML = "";
-
-  const pageCount = Math.ceil(items.length / itemsPerPage);
-
-  function showPage(page) {
-    items.forEach((item, index) => {
-      item.style.display =
-        index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
-          ? "block"
-          : "none";
-    });
-      initPagination();
-      showPage(1);
 
 //end pagination
-
-
-
