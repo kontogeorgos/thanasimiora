@@ -320,12 +320,14 @@ var articles = [
   },
 ];
 
+var pagin=" <nav aria-label="Page navigation example">      <ul class="pagination" id="pagination"></ul>    </nav>";
+
 function combineTexts(articles) {
   let result = "";
 
   articles.forEach((article) => {
    result +=
-      '<div class="newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
+      '<div class="item newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
       encodeURIComponent(article.id) +
       '"><img src="/thanasimiora/resources/images/' +
       article.pic +
@@ -346,7 +348,7 @@ const newz = combineTexts(articles);
 
 const newsEl = document.getElementById("news");
 if (newsEl) {
-  newsEl.innerHTML = newz;
+  newsEl.innerHTML = newz + pagin;
 }
 
 document.addEventListener("click", function (e) {
@@ -364,7 +366,7 @@ function filterArticles(cat) {
   articles.forEach((article) => {
     if (article.category == cat) {
     result +=
-      '<div class="newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
+      '<div class="item newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
       encodeURIComponent(article.id) +
       '"><img src="/thanasimiora/resources/images/' +
       article.pic +
@@ -381,11 +383,11 @@ function filterArticles(cat) {
 
     
     if (newsEl) {
-      newsEl.innerHTML = result;
+      newsEl.innerHTML = result + pagin;
     } else {
       const newstemplate1 =
         document.getElementById("testing");
-      newstemplate1.innerHTML = result
+      newstemplate1.innerHTML = result + pagin
       document.getElementById("comments-section").innerHTML ="";
     }
 
@@ -433,50 +435,48 @@ function articlepage() {
   document.getElementById("testing").innerHTML = rr;
 }
 
+// pagination
+const itemsPerPage = 10;
+      const items = document.querySelectorAll(".item");
+      const pagination = document.getElementById("pagination");
 
+      const pageCount = Math.ceil(items.length / itemsPerPage);
 
+      function showPage(page) {
+        items.forEach((item, index) => {
+          item.style.display =
+            index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+              ? "block"
+              : "none";
+        });
 
+        document
+          .querySelectorAll(".page-item")
+          .forEach((li) => li.classList.remove("active"));
+        document.getElementById(`page-${page}`).classList.add("active");
+      }
 
+      function createPagination() {
+        for (let i = 1; i <= pageCount; i++) {
+          const li = document.createElement("li");
+          li.className = "page-item";
+          li.id = `page-${i}`;
 
+          const a = document.createElement("a");
+          a.className = "page-link";
+          a.href = "#";
+          a.innerText = i;
+          a.onclick = (e) => {
+            e.preventDefault();
+            showPage(i);
+          };
 
+          li.appendChild(a);
+          pagination.appendChild(li);
+        }
+      }
 
+      createPagination();
+      showPage(1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//end pagination
