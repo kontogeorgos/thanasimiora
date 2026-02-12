@@ -322,23 +322,7 @@ var articles = [
 
 const pagin=' <nav aria-label="Page navigation example">      <ul class="pagination" id="pagination"></ul>    </nav>';
 
-function initPagination() {
-  const items = document.querySelectorAll(".item");
-  const pagination = document.getElementById("pagination");
 
-  if (!pagination || items.length === 0) return;
-
-  pagination.innerHTML = "";
-
-  const pageCount = Math.ceil(items.length / itemsPerPage);
-
-  function showPage(page) {
-    items.forEach((item, index) => {
-      item.style.display =
-        index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
-          ? "block"
-          : "none";
-    });
 
     document
       .querySelectorAll(".page-item")
@@ -520,29 +504,27 @@ const itemsPerPage = 10;
         document.getElementById(`page-${page}`).classList.add("active");
       }
 
-      function createPagination() {
-        for (let i = 1; i <= pageCount; i++) {
-          const li = document.createElement("li");
-          li.className = "page-item";
-          li.id = `page-${i}`;
+     function initPagination() {
+  const items = document.querySelectorAll(".item");
+  const pagination = document.getElementById("pagination");
 
-          const a = document.createElement("a");
-          a.className = "page-link";
-          a.href = "#";
-          a.innerText = i;
-          a.onclick = (e) => {
-            e.preventDefault();
-            showPage(i);
-          };
+  if (!pagination || items.length === 0) return;
 
-          li.appendChild(a);
-          pagination.appendChild(li);
-        }
-      }
+  pagination.innerHTML = "";
 
-      createPagination();
+  const pageCount = Math.ceil(items.length / itemsPerPage);
+
+  function showPage(page) {
+    items.forEach((item, index) => {
+      item.style.display =
+        index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+          ? "block"
+          : "none";
+    });
+      initPagination();
       showPage(1);
 
 //end pagination
+
 
 
