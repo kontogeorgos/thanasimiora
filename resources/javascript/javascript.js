@@ -23,7 +23,7 @@ var articles = [
     id: 31,
     date: "13/2/2026",
     title:
-      "Δύο ηγέτες, δύο κόσμοι. Όταν ο Ρόμπερτ Μουγκάμπε «συναντά» τον Ιουστινιανό",
+      "Όταν ο Ρόμπερτ Μουγκάμπε «συναντά» τον Ιουστινιανό",
     pic: "robert",
     category: "ΠΟΛΙΤΙΣΜΟΣ",
     author: "Father Diablo",
@@ -455,6 +455,7 @@ function articlepage() {
 
 
 // pagination
+
 
 
 
