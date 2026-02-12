@@ -434,6 +434,74 @@ function articlepage() {
 }
 
 
+// pagination
+const articlesPerPage = 5;
+let currentPage = 1;
+
+function renderArticles() {
+  const newsContainer = document.getElementById("news");
+  newsContainer.innerHTML = "";
+
+  const start = (currentPage - 1) * articlesPerPage;
+  const end = start + articlesPerPage;
+
+  const currentArticles = articles.slice(start, end);
+
+  currentArticles.forEach(article => {
+    const div = document.createElement("div");
+    div.className = "news-item mb-4";
+    div.innerHTML = `
+      <h3>${article.title}</h3>
+      <small>${article.date} • ${article.category}</small>
+      <p>${article.text.substring(0, 250)}...</p>
+    `;
+    newsContainer.appendChild(div);
+  });
+
+  renderPagination();
+}
+
+function renderPagination() {
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+  // Previous
+  pagination.appendChild(createPageItem("Previous", currentPage - 1, currentPage === 1));
+
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    pagination.appendChild(createPageItem(i, i, false, i === currentPage));
+  }
+
+  // Next
+  pagination.appendChild(createPageItem("Next", currentPage + 1, currentPage === totalPages));
+}
+
+function createPageItem(label, page, disabled = false, active = false) {
+  const li = document.createElement("li");
+  li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+
+  const btn = document.createElement("button");
+  btn.className = "page-link";
+  btn.textContent = label;
+
+  btn.addEventListener("click", () => {
+    if (!disabled && page !== currentPage) {
+      currentPage = page;
+      renderArticles();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
+  li.appendChild(btn);
+  return li;
+}
+
+// initial render
+renderArticles();
+
 
 
 
