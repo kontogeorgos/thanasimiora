@@ -38,13 +38,13 @@ footer {
 }
 .newscontainer {
   /* display: flex;
-  flex-direction: column;
+  flex-direction: column; */
   align-items: center;
-  margin-bottom: 60px;
-  align-content: center; */
+  /* margin-bottom: 60px;
+  align-content: center;  */
   width: 90%;
   max-width: 90%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .newsdiv {
@@ -309,4 +309,5 @@ a {
 }
 
 /* τελος σχολιων */
+
 
