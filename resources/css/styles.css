@@ -16,23 +16,22 @@ footer {
 .mainpage {
   display: flex;
 }
-.adleft {
-  background-color: blueviolet;
-  width: 12%;
-}
+.adleft,
 .adright {
-  background-color: pink;
-  width: 12%;
+  width: 12vw; /* 12% of screen width */
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
 }
 .ads {
-  .container img {
-    object-fit: contain;
-    /* or
-  object-fit: cover; */
-  }
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
+
 #news {
-  width: 76%;
+  width: 76vw;
   align-self: center;
 }
 .pagination > li > a {
