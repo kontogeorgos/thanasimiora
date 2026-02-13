@@ -47,12 +47,13 @@ footer {
   max-width: 90%;
   /* text-align: center; */
 }
-.newscontainer img {
+.newsdiv img {
     display: block;       /* ensures the image is treated as a block element */
-    margin: 0 auto;  
+    /* margin: 0 auto;   */
 }
 .newsdiv {
   position: relative;
+  width: 100%;
 }
 #title {
   text-decoration: underline;
@@ -313,6 +314,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
