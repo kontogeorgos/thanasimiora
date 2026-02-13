@@ -346,7 +346,7 @@ function combineTexts(articles) {
     result +=
       '<div class="newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
       encodeURIComponent(article.id) +
-      '"><img src="/thanasimiora/resources/images/' +
+      '"><img src="/resources/images/' +
       article.pic +
       '.png" alt="article"/></a><h6 class="category"> ' +
       article.category +
@@ -368,7 +368,6 @@ const newz = combineTexts(articles);
 const newsEl = document.getElementById("news");
 if (newsEl) {
   newsEl.innerHTML = newz + paginationnavbar;
-   
 }
 
 document.addEventListener("click", function (e) {
@@ -378,7 +377,7 @@ document.addEventListener("click", function (e) {
     const cat = e.target.dataset.category;
     filterArticles(cat);
     items = document.querySelectorAll(".newscontainer");
-  
+    pages();
   }
 });
 
@@ -390,7 +389,7 @@ function filterArticles(cat) {
       result +=
         '<div class="newscontainer"><div><div class="newsdiv"><a href="/thanasimiora/temp/template1.html?text=' +
         encodeURIComponent(article.id) +
-        '"><img src="/thanasimiora/resources/images/' +
+        '"><img src="/resources/images/' +
         article.pic +
         '.png" alt="article"/></a><h6 class="category"> ' +
         article.category +
@@ -405,12 +404,10 @@ function filterArticles(cat) {
 
     if (newsEl) {
       newsEl.innerHTML = result + paginationnavbar;
-        pages();
     } else {
       const newstemplate1 = document.getElementById("testing");
       newstemplate1.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
-        pages();
     }
   });
 }
@@ -466,9 +463,9 @@ function pages() {
     items.forEach((item, index) => {
       item.style.display =
         index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
-        ? "block"
+          ? "block"
           : "none";
-          });
+    });
 
     document
       .querySelectorAll(".page-item")
@@ -499,8 +496,3 @@ function pages() {
   createPagination();
   showPage(1);
 }
-
-
-
-
-
