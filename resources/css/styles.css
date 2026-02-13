@@ -1,6 +1,8 @@
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 18px;}}
+    font-size: 18px;
+  }
+}
 body {
   /* Fallback for browsers that don't support dvh */
   min-height: 100vh;
@@ -11,13 +13,43 @@ body {
 footer {
   margin-top: auto;
 }
-
+.mainpage {
+  display: flex;
+}
+.adleft {
+  background-color: blueviolet;
+  width: 12%;
+}
+.adright {
+  background-color: pink;
+  width: 12%;
+}
+.ads {
+  .container img {
+    object-fit: contain;
+    /* or
+  object-fit: cover; */
+  }
+}
 #news {
-  /* width: 75%; */
+  width: 76%;
   align-self: center;
 }
+.pagination > li > a {
+  background-color: white;
+  color: #ba0e09;
+}
+.pagination > .active > a {
+  color: white;
+  background-color: #ba0e09;
+  border: solid 1px #ba0e09;
+}
 
-
+.pagination > li > a:hover {
+  color: #ba0e09;
+  background-color: #ffbf00;
+  border-color: #ffbf00;
+}
 .topbar {
   display: flex;
   background-color: #ba0e09;
@@ -25,7 +57,9 @@ footer {
   align-items: center;
   height: 200px;
 }
-#titles{width:75%vw}
+#titles {
+  width: 75%;
+}
 #menu {
   font-weight: bold;
   background-color: #ffbf00;
@@ -33,8 +67,10 @@ footer {
   border-radius: 5px;
 }
 
-.dropdown-item:active {   background-color: #ba0e09; }
-              
+.dropdown-item:active {
+  background-color: #ba0e09;
+}
+
 a {
   color: black;
 }
@@ -81,7 +117,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
-    align-content: center;
+  align-content: center;
 }
 
 .newsdiv {
@@ -149,18 +185,16 @@ img {
   width: 75%;
 }
 
-
 .article {
- font-size: 22px;
+  font-size: 22px;
   text-align: justify;
 }
-
 
 .epikoinonia-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 75%vw;
+  width: 75%;
 }
 
 .child {
@@ -193,7 +227,6 @@ img {
   text-decoration: none;
   font-weight: 500;
 }
-
 
 /* σχόλια */
 .comments-container {
@@ -277,42 +310,3 @@ img {
 }
 
 /* τελος σχολιων */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
