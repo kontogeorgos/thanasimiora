@@ -26,6 +26,7 @@ footer {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+   padding: 2vw;
 }
 
 .news{
@@ -323,6 +324,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
