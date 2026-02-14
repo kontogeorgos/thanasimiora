@@ -37,7 +37,7 @@ footer {
 }
 
 #news {
-  min-width: 76vw;
+  width: 76vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -75,6 +75,8 @@ footer {
   object-fit: contain;
 }
 
+#testing {width:85vw;}
+         
 #title {
   text-decoration: underline;
   text-align: center;
@@ -333,6 +335,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
