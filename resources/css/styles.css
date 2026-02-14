@@ -34,7 +34,16 @@ footer {
 
 .news{
      flex: 1;
-justify-content: flex-start;}
+}
+
+#news {
+  width: 76vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .ads {
   z-index: 0;
@@ -45,13 +54,7 @@ justify-content: flex-start;}
   margin-bottom: 7dvh;
 }
 
-#news {
-  width: 76vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
+
 .newscontainer {
   display: flex;
   flex-direction: column;
@@ -330,6 +333,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
