@@ -378,7 +378,7 @@ document.addEventListener("click", function (e) {
     const cat = e.target.dataset.category;
     filterArticles(cat);
     items = document.querySelectorAll(".newscontainer");
-  
+   pages();
   }
 });
 
@@ -405,12 +405,12 @@ function filterArticles(cat) {
 
     if (newsEl) {
       newsEl.innerHTML = result + paginationnavbar;
-        pages();
+      
     } else {
       const newstemplate1 = document.getElementById("testing");
       newstemplate1.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
-        pages();
+       
     }
   });
 }
@@ -499,6 +499,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
