@@ -339,6 +339,25 @@ var articles = [
 const paginationnavbar =
   ' <nav aria-label="Page navigation example">      <ul class="pagination justify-content-center" id="pagination">  </ul>    </nav>';
 
+const adleft =
+  '<a href="https://www.pakohart.gr"          ><img class="ads" src="/thanasimiora/resources/ads/ad1.gif" alt="ad1"        /></a>        <a          href="https://www.facebook.com/p/%CE%93%CE%A1%CE%91%CE%A6%CE%95%CE%99%CE%9F-%CE%A4%CE%95%CE%9B%CE%95%CE%A4%CE%A9%CE%9D-%CE%A4%CE%9F-%CE%93%CE%A1%CE%97%CE%93%CE%9F%CE%A1%CE%9F-%CE%A6%CE%A4%CE%A5%CE%91%CE%A1%CE%99-100067909448422/"          ><img class="ads" src="/thanasimiora/resources/ads/ad2.png" alt="ad2"        /></a>';
+const adright =
+  ' <a href="https://big-hunter.gr"            ><img              class="ads"              src="/thanasimiora/resources/ads/adb.png"              alt="ada"          /></a>          <a href="https://www.verettasbooks.gr"            ><img              class="ads"              src="/thanasimiora/resources/ads/ada.gif"              alt="adb"          /></a>';
+
+//ta divs stis selides
+const newsEl = document.getElementById("news");
+const newstemplate1 = document.getElementById("testing");
+const oroi = document.getElementById("oroi");
+const adleftdiv = document.getElementById("adleft");
+const adrightdiv = document.getElementById("adright");
+// ws edw
+
+function adads() {
+  adleftdiv.innerHTML = adleft;
+  adright.innerHTML = adright;
+}
+adads();
+
 function combineTexts(articles) {
   let result = "";
 
@@ -365,10 +384,8 @@ let currentPage = 1;
 
 const newz = combineTexts(articles);
 
-const newsEl = document.getElementById("news");
 if (newsEl) {
   newsEl.innerHTML = newz + paginationnavbar;
-   
 }
 
 document.addEventListener("click", function (e) {
@@ -378,7 +395,7 @@ document.addEventListener("click", function (e) {
     const cat = e.target.dataset.category;
     filterArticles(cat);
     items = document.querySelectorAll(".newscontainer");
-   pages();
+    pages();
   }
 });
 
@@ -405,14 +422,16 @@ function filterArticles(cat) {
 
     if (newsEl) {
       newsEl.innerHTML = result + paginationnavbar;
-      
-    } else {
-      const newstemplate1 = document.getElementById("testing");
+    } else if (newstemplate1) {
       newstemplate1.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
-       
+    } else {
+      oroi.innerHTML = "";
+      oroi.innerHTML = result + paginationnavbar;
+      document.getElementById("comments-section").innerHTML = "";
     }
   });
+  adads();
 }
 
 document.getElementById("barr").innerHTML =
@@ -428,10 +447,11 @@ document.getElementById("comments-section").innerHTML =
   '<h3>Σχόλια</h3>      <div id="comments-list" class="comments-list"></div>      <h4>Γράψτε ένα σχόλιο...</h4>      <input        type="text"        id="comment-name"        placeholder="Όνομα (Προαιρετικά)"        class="comment-input"      />      <textarea        id="comment-text"        placeholder="Σχόλιο"        class="comment-textarea"      ></textarea>      <button onclick="postComment()" class="comment-button">Δημοσίευση</button>   ';
 
 const script = document.createElement("script");
-script.src = "/thanasimiora/resources/javascript/comments.js"; // or inline script
-script.defer = true; // optional but recommended
+script.src = "/thanasimiora/resources/javascript/comments.js";
+script.defer = true;
 document.body.appendChild(script);
 
+//articles from template creation
 function articlepage() {
   const params = new URLSearchParams(window.location.search);
   var v = articles.length - params.get("text");
@@ -499,9 +519,3 @@ function pages() {
   createPagination();
   showPage(1);
 }
-
-
-
-
-
-
