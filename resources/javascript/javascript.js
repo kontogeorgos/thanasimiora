@@ -421,7 +421,9 @@ function filterArticles(cat) {
         article.title +
         "</h1></a></div>";
     }
-
+ document.getElementById("strawright").id="adright";
+     document.getElementById("strawlft").id="adleft";
+    
     if (newsEl) {
       newsEl.innerHTML = result + paginationnavbar;
     } else if (newstemplate1) {
@@ -525,6 +527,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
