@@ -28,6 +28,7 @@ footer {
   overflow: hidden;
    padding: 2vw;
 }
+.adright { padding-top: 50vw;}
 
 .news{
      flex: 1;}
@@ -324,6 +325,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
