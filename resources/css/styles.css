@@ -27,12 +27,11 @@ footer {
 
 .adleft,
 .adright {
-  flex: 0 0 20%;
-  top: 50px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-   padding: 2vw;
+  position: absolute;
+  top: 0;
+  width: 20%;
+  max-width: 20%;
+  padding: 2vw;
   box-sizing: border-box;
    
 }
@@ -346,6 +345,7 @@ width: 100%;
 }
 
 /* τελος σχολιων */
+
 
 
 
