@@ -356,7 +356,7 @@ function adads() {
   adleftdiv.innerHTML = adleft;
   adrightdiv.innerHTML = adright;
 }
-if(adleft){
+if(adleftdiv){
 adads();
 }
 
@@ -527,6 +527,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
