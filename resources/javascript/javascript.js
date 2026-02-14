@@ -425,6 +425,7 @@ function filterArticles(cat) {
     } else if (newstemplate1) {
       newstemplate1.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
+      newstemplate1.id="news";
     } else {
       oroi.innerHTML = "";
       oroi.innerHTML = result + paginationnavbar;
@@ -522,6 +523,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
