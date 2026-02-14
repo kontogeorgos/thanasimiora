@@ -430,6 +430,7 @@ function filterArticles(cat) {
       oroi.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
     }
+    adads();
   });
  
 }
@@ -521,6 +522,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
