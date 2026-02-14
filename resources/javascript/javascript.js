@@ -441,7 +441,7 @@ function filterArticles(cat) {
       document.getElementById("comments-section").innerHTML = "";
       newstemplate1.id="news";
     } else {
-      oroi.innerHTML = "";
+      // oroi.innerHTML = "";
       oroi.innerHTML = result + paginationnavbar;
       document.getElementById("comments-section").innerHTML = "";
     }
@@ -539,6 +539,7 @@ function pages() {
   createPagination();
   showPage(1);
 }
+
 
 
 
