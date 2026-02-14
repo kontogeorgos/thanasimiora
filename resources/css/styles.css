@@ -17,6 +17,7 @@ footer {
 .mainpage {
   display: flex;
 }
+
 .adleft,
 .adright {
   width: 20vw;  
@@ -25,8 +26,10 @@ footer {
   flex-direction: column;
   overflow: hidden;
 }
+
 .news{
-     max-width:60vw;}
+     max-width:55vw;}
+
 .ads {
   z-index: 0;
   padding: 1.5vw;
@@ -319,6 +322,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
