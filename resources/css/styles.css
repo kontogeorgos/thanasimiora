@@ -26,8 +26,8 @@ footer {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-   padding: 2vw;
-   padding-top: 10dvh;
+   margin: 2vw;
+   margin-top: 10dvh;
 }
 .adright {  margin-top: 30dvh;}
 
@@ -326,6 +326,7 @@ a {
 }
 
 /* τελος σχολιων */
+
 
 
 
